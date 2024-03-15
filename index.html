@@ -212,13 +212,15 @@
         }
 
         function ShareData(filePath) {
-            try {
+            if (navigator.share) {
                 navigator.share({
-                    title: 'Wordle Clone',
-                    text: "ABC"
-                });
-            } catch (err) {
-                console.log("Error:" + err);
+                    title: "Your web title",
+                    text: "Your web description",
+                    url: "Your web url",
+                }).then(() => console.log("share success")).catch((error) => console.log(error));
+            }
+            else {
+                alert('Sorry. Sharing not available on your device');
             }
         }
 
