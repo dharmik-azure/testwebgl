@@ -178,6 +178,7 @@
             //set devicePixelRatio=1; to avoid draining fillrate performance on mobile and override low DPI mode
             config.devicePixelRatio = window.devicePixelRatio;
         }
+
         loadingCover.style.display = "";
 
         window.zappar = ZCV.initialize();
@@ -211,9 +212,10 @@
         }
 
         function ShareData(filePath) {
-            filePath.replace("blob:", "");
             console.log("Javascript :: Share event call...");
-            navigator.canShare(filePath);
+            // navigator.canShare(filePath);
+
+            navigator.canShare("filePath");
         }
 
     </script>
