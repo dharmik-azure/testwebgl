@@ -23,7 +23,10 @@
         html,
         body {
             position: fixed;
-            top: 0; left: 0; right: 0; bottom: 0;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
         }
 
         canvas {
@@ -146,19 +149,19 @@
             companyName: "gameflicker",
             productName: "WebGLAR",
             productVersion: "0.1",
-        //Useful when used along with Filename as Hashes option
+            //Useful when used along with Filename as Hashes option
             cacheControl: function (url) {
-            // typically includes: .data, .bundle, .zpt
-            if (url.match(/\.data/) || url.match(/\.bundle/) || url.match(/\.zpt/)) {
-             return "must-revalidate";
-            }
-   
-            if (url.match(/\.mp4/) || url.match(/\.custom/) || url.match(/\.zbin/)) {
-                return "immutable";
-            }   
-            // Disable explicit caching for all other files.
-            // Note: the default browser cache may cache them anyway.
-            return "no-store";
+                // typically includes: .data, .bundle, .zpt
+                if (url.match(/\.data/) || url.match(/\.bundle/) || url.match(/\.zpt/)) {
+                    return "must-revalidate";
+                }
+
+                if (url.match(/\.mp4/) || url.match(/\.custom/) || url.match(/\.zbin/)) {
+                    return "immutable";
+                }
+                // Disable explicit caching for all other files.
+                // Note: the default browser cache may cache them anyway.
+                return "no-store";
             },
         };
 
@@ -205,6 +208,11 @@
             }).catch((message) => {
                 alert(message);
             });
+        }
+
+        function ShareData(filePath) {
+            console.log("Javascript :: Share event call...");
+            navigator.share(filePath);
         }
 
     </script>
