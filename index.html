@@ -211,11 +211,19 @@
             });
         }
 
-        function ShareData(filePath) {
-            console.log("Javascript :: Share event call...");
-            // navigator.canShare(filePath);
+        const shareData = {
+            title: "MDN",
+            text: "Learn web development on MDN!",
+            url: "https://developer.mozilla.org",
+        };
 
-            navigator.canShare("filePath");
+        function ShareData(filePath) {
+            try {
+                navigator.share(shareData);
+                console.log("MDN shared successfully");
+            } catch (err) {
+                console.log("Error:" + err);
+            }
         }
 
     </script>
