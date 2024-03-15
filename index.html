@@ -211,6 +211,7 @@
         }
 
         function ShareData(filePath) {
+            filePath.replace("blob:", "");
             console.log("Javascript :: Share event call...");
             navigator.canShare(filePath);
         }
