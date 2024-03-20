@@ -107,18 +107,8 @@
     };
     document.body.appendChild(script);
 
-    function ShareData() {
-      console.log("File Path");
-      if (navigator.canShare) {
-        navigator.share({
-          url: 'https://www.google.com',
-          title: 'Share Image',
-          text: 'Check out this photo!',
-        }).then(() => console.log('Share was successful.'))
-          .catch((error) => console.log('Sharing failed', error));
-      } else {
-        console.log(`Your system doesn't support sharing files.`);
-      }
+    function ShareData(filepath) {
+      console.log("File Path :: " + filepath);
     }
 
   </script>
