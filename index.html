@@ -43,7 +43,7 @@
       console.log("Pressed in WebGL!");
       if (navigator.canShare) {
         navigator.share({
-          url: filepath,
+          files: filepath,
           title: 'Share Image',
           text: 'Check out this photo!',
         }).then(() => console.log('Share was successful.'))
