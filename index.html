@@ -39,8 +39,8 @@
       // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
     });
 
-    function ShareButton(filepath) {
-      console.log("Pressed in WebGL!");
+    function ShareButton(filePath) {
+      console.log("Pressed in WebGL! :: path ::" + filePath);
       if (navigator.canShare) {
         navigator.share({
           url: "https://www.google.com",
