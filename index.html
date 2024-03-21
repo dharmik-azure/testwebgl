@@ -42,12 +42,11 @@
     function ShareButton(filePath) {
       console.log("Pressed in WebGL! :: path ::" + filePath);
 
-      const shareData = {
-        files: [blob],
-      };
+      const myFile = new File([filePath], "filename.webm", { type: 'video/webm' });
+
       if (navigator.canShare) {
         navigator.share({
-          url: filePath,
+          files: myFile,
           title: 'Share Image',
           text: 'Check out this video!',
         }).then(() => console.log('Share was successful.'))
