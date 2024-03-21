@@ -41,10 +41,13 @@
 
     function ShareButton(filePath) {
       console.log("Pressed in WebGL! :: path ::" + filePath);
+
+      const shareData = {
+        files: [blob],
+      };
       if (navigator.canShare) {
         navigator.share({
-
-          url: "https://www.youtube.com/watch?v=FUiu-cdu6mA",
+          url: filePath,
           title: 'Share Image',
           text: 'Check out this video!',
         }).then(() => console.log('Share was successful.'))
